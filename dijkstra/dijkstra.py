@@ -9,7 +9,7 @@ shortest path to each vertex, from the source vertex provided.
 
 Time Complexity: O(V + E log V)
 
-Every vertex is visted once, giving V iterations. Updating the priority
+Every vertex is visited once, giving V iterations. Updating the priority
 in the min heap takes log V, which occurs for every edge in E.
 
 '''
