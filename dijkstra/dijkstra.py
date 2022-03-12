@@ -1,20 +1,20 @@
+from collections import defaultdict
 import sys
 import heapq
 
-'''
-
-Dijkstra's algorithm is a modification of breadth-first search for a
-connected graph with positively weighted edges. It will determine the
-shortest path to each vertex, from the source vertex provided.
+''' -----------------------------------------------------------------------------------
+Dijkstra's algorithm is a modification of breadth-first search for a connected
+graph with positively weighted edges. It will determine the shortest path to
+each vertex, from the source vertex provided.
 
 Time Complexity: O(V + E log V)
 
-Every vertex is visited once, giving V iterations. Updating the priority
-in the min heap takes log V, which occurs for every edge in E.
+Every vertex is visited once, giving V iterations. Updating the priority in the
+min heap takes log V, which occurs for every edge in E.
+----------------------------------------------------------------------------------  '''
 
-'''
 
-def dijkstra(graph, source):
+def dijkstra(graph:defaultdict(list), source) -> int:
 
     # Tracks the current minimum path of distances between vertices
     weights = {vertex: sys.maxsize for vertex in graph}

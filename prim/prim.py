@@ -1,21 +1,21 @@
+from collections import defaultdict
 import heapq
 
-'''
-
-Prim's algorithm will determine the minimum spanning tree of a
-connected graph. This implementation will create a dictionary,
-where each vertex is recorded with it's minimum edge.
+''' -----------------------------------------------------------------------------------
+Prim's algorithm will determine the minimum spanning tree of a connected graph.
+This implementation will create a dictionary, where each vertex is recorded with
+it's minimum edge.
 
 Time Complexity: O(E^2 log E)
 
-For a complete graph, time complexity of traversals will result in
-E^2, with a log E complexity for using the min heap.
+For a complete graph, time complexity of traversals will result in E^2, with a
+log E complexity for using the min heap.
+----------------------------------------------------------------------------------  '''
 
-'''
 
-def prim(graph, source):
+def prim(graph:defaultdict(list), source) -> defaultdict(int):
     visited = set()
-    minSpanningTree = dict()
+    minSpanningTree = defaultdict(int)
 
     minHeap = [(0, source)]
     while len(visited) < len(graph):
